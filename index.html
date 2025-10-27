@@ -3,68 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cris – Security & AppSec Portfolio</title>
+  <title>Cris – Security Engineer Portfolio</title>
   <style>
-    /* ===== Global Styles ===== */
     :root {
       --bg-color: #0d1117;
-      --card-color: #161b22;
+      --sidebar-color: #161b22;
+      --card-color: #1c2128;
       --text-color: #e6edf3;
       --accent: #58a6ff;
     }
 
     body {
-      background: var(--bg-color);
+      margin: 0;
+      background-color: var(--bg-color);
       color: var(--text-color);
       font-family: 'Segoe UI', Roboto, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background: var(--card-color);
-      padding: 1rem 2rem;
       display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: var(--sidebar-color);
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+      padding: 2rem 1rem;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
+    .sidebar h1 {
+      font-size: 1.4rem;
       color: var(--accent);
+      margin-bottom: 2rem;
     }
 
-    nav a {
+    .nav a {
+      display: block;
       color: var(--text-color);
-      margin-left: 1rem;
       text-decoration: none;
+      margin: 0.8rem 0;
       font-weight: 500;
+      transition: color 0.3s;
     }
 
-    nav a:hover {
+    .nav a:hover {
       color: var(--accent);
+    }
+
+    .content {
+      margin-left: 240px;
+      padding: 2rem;
+      flex: 1;
+      overflow-y: auto;
+      scroll-behavior: smooth;
     }
 
     section {
-      display: none;
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-      animation: fadeIn 0.4s ease-in-out;
-    }
-
-    section.active {
-      display: block;
+      margin-bottom: 4rem;
+      max-width: 800px;
+      margin-right: auto;
     }
 
     .card {
       background: var(--card-color);
       padding: 1.5rem;
       border-radius: 10px;
-      margin-bottom: 1.5rem;
+      margin-top: 1rem;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      color: var(--accent);
+      margin-top: 0;
     }
 
     a.link {
@@ -78,94 +93,4 @@
 
     footer {
       text-align: center;
-      padding: 1rem;
-      color: #888;
-      font-size: 0.9rem;
-      border-top: 1px solid #222;
-      margin-top: 2rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Cris – Security Engineer</h1>
-    <nav>
-      <a href="#" onclick="showTab('about')">About</a>
-      <a href="#" onclick="showTab('projects')">Projects</a>
-      <a href="#" onclick="showTab('certifications')">Certifications</a>
-      <a href="#" onclick="showTab('resume')">Resume</a>
-      <a href="#" onclick="showTab('contact')">Contact</a>
-    </nav>
-  </header>
-
-  <section id="about" class="active">
-    <div class="card">
-      <h2>About Me</h2>
-      <p>I'm a Systems Engineer focused on <b>Application Security</b> and <b>Security Compliance</b>, with a background in QA. 
-      I’m passionate about improving the security and reliability of applications through collaboration, automation, and testing.</p>
-      <p>Currently enhancing my technical expertise through labs and continuous learning, including <b>TryHackMe</b> and <b>PortSwigger Web Security Academy</b>.</p>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="card">
-      <h2>Projects</h2>
-      <ul>
-        <li><b>Phishing Awareness Platform</b> – GoPhish deployment on Azure with secure email setup.</li>
-        <li><b>Security Policy Automation</b> – SOC 2 Type 2 readiness and gap analysis support.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="certifications">
-    <div class="card">
-      <h2>Certifications</h2>
-      <ul>
-        <li><b>TryHackMe</b> – Web Application Penetration Testing Learning Path (<a class="link" href="#">View Profile</a>)</li>
-        <li><b>PortSwigger Academy</b> – Web Security Labs (<a class="link" href="#">View Profile</a>)</li>
-        <li><b>eWPT (in progress)</b> – eLearnSecurity Web Application Penetration Tester</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="resume">
-    <div class="card">
-      <h2>Resume</h2>
-      <p>You can download my latest resume here:</p>
-      <p><a class="link" href="#" target="_blank">📄 View Resume</a></p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="card">
-      <h2>Contact</h2>
-      <p>Let's connect:</p>
-      <ul>
-        <li>📧 Email: <a class="link" href="mailto:your.email@example.com">your.email@example.com</a></li>
-        <li>💼 LinkedIn: <a class="link" href="#">linkedin.com/in/yourprofile</a></li>
-        <li>🐙 GitHub: <a class="link" href="#">github.com/yourusername</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Cris | Built with ❤️ and focus on security</p>
-  </footer>
-
-  <script>
-    function showTab(tabId) {
-      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-    }
-  </script>
-</body>
-</html>
+      font-size: 0.9
